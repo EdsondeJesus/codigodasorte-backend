@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerar Meus Jogos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            text-align: center;
+            padding-top: 50px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .jogo {
+            margin: 15px auto;
+            font-size: 20px;
+            background: white;
+            padding: 10px;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎯 Código da Sorte</h1>
+    <p>Clique abaixo para gerar seus 3 jogos exclusivos:</p>
+    <button onclick="gerarJogos()">Gerar meus jogos</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        async function gerarJogos() {
+            const resposta = await fetch("http://127.0.0.1:8000/gerar-jogos");
+            const dados = await resposta.json();
+            const jogos = dados.jogos;
+
+            const container = document.getElementById("resultado");
+            container.innerHTML = ""; // limpa anterior
+
+            jogos.forEach((jogo, index) => {
+                const div = document.createElement("div");
+                div.className = "jogo";
+                div.innerText = `Jogo ${index + 1}: ${jogo.join(", ")}`;
+                container.appendChild(div);
+            });
+        }
+    </script>
+
+</body>
+</html>
