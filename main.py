@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Query
-import random, json
-from helpers.filtros import aplicar_filtros
+import random
+import json
+from filtros import aplicar_filtros
 
 app = FastAPI()
 
@@ -15,6 +16,7 @@ def gerar_combinacoes(quantidade: int = Query(..., gt=0, le=10000)):
 
     resultados = []
     tentativas = 0
+
     while len(resultados) < quantidade and tentativas < quantidade * 50:
         jogo = sorted(random.sample(config["dezenas_validas"], 15))
         if aplicar_filtros(jogo, config):
