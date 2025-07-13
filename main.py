@@ -10,7 +10,8 @@ def gerar():
     if not combinacoes:
         return HTMLResponse("<h1>⚠️ Nenhuma combinação encontrada</h1>")
 
-    jogo = combinacoes[0]
+    import random
+    jogo = random.choice(combinacoes)
     jogo_formatado = " - ".join(str(num).zfill(2) for num in jogo)
 
     html = f"""

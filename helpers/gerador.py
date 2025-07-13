@@ -46,10 +46,8 @@ def gerar_combinacoes():
 
                 resultados.append(jogo)
 
-                if len(resultados) == 1:
-                    return resultados
-
     return resultados
+
 
 
 
