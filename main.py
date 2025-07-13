@@ -1,15 +1,16 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
-import random
+from helpers.gerador import gerar_combinacoes  # ajuste o caminho se necessário
 
 app = FastAPI()
 
-def gerar_jogo():
-    return sorted(random.sample(range(1, 26), 15))
-
 @app.get("/gerar", response_class=HTMLResponse)
 def gerar():
-    jogo = gerar_jogo()
+    combinacoes = gerar_combinacoes()
+    if not combinacoes:
+        return HTMLResponse("<h1>⚠️ Nenhuma combinação encontrada</h1>")
+
+    jogo = combinacoes[0]
     jogo_formatado = " - ".join(str(num).zfill(2) for num in jogo)
 
     html = f"""
@@ -68,4 +69,5 @@ def gerar():
     </html>
     """
     return html
+
 
