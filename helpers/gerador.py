@@ -8,8 +8,11 @@ grupo2 = [6,7,8,9,10,12,13,15,17,19]
 excluir_numeros = [16,17]
 exigir_numeros = [8]
 
-def contar_impares(seq):
-    return sum(1 for n in seq if n % 2 != 0)
+def contar_impares(jogo):
+    return sum(1 for d in jogo if d % 2 == 1)
+
+def contar_pares(jogo):
+    return sum(1 for d in jogo if d % 2 == 0)
 
 def gerar_combinacoes():
     resultados = []
@@ -18,35 +21,36 @@ def gerar_combinacoes():
         qtd_g2 = 15 - qtd_g1
         for comb1 in combinations(grupo1, qtd_g1):
             for comb2 in combinations(grupo2, qtd_g2):
-                jogo = sorted(list(comb1 + comb2))
+                jogo = sorted(comb1 + comb2)
 
-                # Critério: 1ª dezena entre 1 e 3
+                # Critério 1: 1ª dezena entre 1 e 3
                 if jogo[0] not in [1, 2, 3]:
                     continue
 
-                # Critério: 15ª dezena > 22
+                # Critério 2: 15ª dezena > 22
                 if jogo[-1] <= 22:
                     continue
 
-                # Critério: ímpares
-                impares = contar_impares(jogo)
-                if impares not in [6]:
+                # Critério 3: exatamente 9 pares e 6 ímpares
+                pares = contar_pares(jogo)
+                if pares != 9:
                     continue
 
-                # Eliminar jogos que contenham qualquer número proibido
+                # Critério 4: eliminar números proibidos
                 if any(n in jogo for n in excluir_numeros):
                     continue
 
-                # Manter somente jogos que contenham todos os exigidos
+                # Critério 5: exigir números obrigatórios
                 if not all(n in jogo for n in exigir_numeros):
                     continue
 
                 resultados.append(jogo)
 
-                # Para testes: gerar apenas 3
+                # Para testes: limitar a 3 jogos
                 if len(resultados) == 3:
                     return resultados
 
     return resultados
+
 
 
