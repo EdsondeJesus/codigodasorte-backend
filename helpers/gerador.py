@@ -1,8 +1,8 @@
 from itertools import combinations
 
 # Grupos de dezenas definidos
-grupo1 = [1,3,4,6,7,8,9,12,13,15,16,17,18,21,25]
-grupo2 = [2,5,10,11,14,19,20,22,23,24]
+grupo1 = [1,2,3,4,5,11,14,16,18,20,21,22,23,24,25]
+grupo2 = [6,7,8,9,10,12,13,15,17,19]
 
 # Números proibidos e obrigatórios
 excluir_numeros = [16,17]
@@ -14,7 +14,7 @@ def contar_impares(seq):
 def gerar_combinacoes():
     resultados = []
 
-    for qtd_g1 in [9, 10]:
+    for qtd_g1 in [8, 9, 10]:
         qtd_g2 = 15 - qtd_g1
         for comb1 in combinations(grupo1, qtd_g1):
             for comb2 in combinations(grupo2, qtd_g2):
@@ -28,9 +28,9 @@ def gerar_combinacoes():
                 if jogo[-1] <= 22:
                     continue
 
-                # Critério: 7 a 9 ímpares
+                # Critério: ímpares
                 impares = contar_impares(jogo)
-                if impares not in [7, 8, 9]:
+                if impares not in [6]:
                     continue
 
                 # Eliminar jogos que contenham qualquer número proibido
@@ -48,4 +48,5 @@ def gerar_combinacoes():
                     return resultados
 
     return resultados
+
 
