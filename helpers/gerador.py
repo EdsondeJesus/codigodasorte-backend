@@ -1,5 +1,11 @@
 from itertools import combinations
 
+# ================================ #
+# CONFIGURAÇÃO DOS FILTROS FIXOS  #
+# ================================ #
+pares_desejados = 9
+impares_desejados = 6
+
 # Grupos de dezenas definidos
 grupo1 = [1,2,3,4,5,11,14,16,18,20,21,22,23,24,25]
 grupo2 = [6,7,8,9,10,12,13,15,17,19]
@@ -8,16 +14,22 @@ grupo2 = [6,7,8,9,10,12,13,15,17,19]
 excluir_numeros = [16,17]
 exigir_numeros = [8]
 
+# ================================ #
+# FUNÇÕES DE APOIO                #
+# ================================ #
 def contar_impares(jogo):
     return sum(1 for d in jogo if d % 2 == 1)
 
 def contar_pares(jogo):
     return sum(1 for d in jogo if d % 2 == 0)
 
+# ================================ #
+# GERADOR PRINCIPAL               #
+# ================================ #
 def gerar_combinacoes():
     resultados = []
 
-    for qtd_g1 in [8, 9, 10]:
+    for qtd_g1 in [8,9]:
         qtd_g2 = 15 - qtd_g1
         for comb1 in combinations(grupo1, qtd_g1):
             for comb2 in combinations(grupo2, qtd_g2):
@@ -31,26 +43,26 @@ def gerar_combinacoes():
                 if jogo[-1] <= 22:
                     continue
 
-                # Critério 3: exatamente 9 pares e 6 ímpares
+                # Critério 3: exatamente X pares e Y ímpares
                 pares = contar_pares(jogo)
-                if pares != 9:
+                impares = contar_impares(jogo)
+                if pares != pares_desejados or impares != impares_desejados:
                     continue
 
-                # Critério 4: eliminar números proibidos
+                # Critério 4: eliminar jogos com números proibidos
                 if any(n in jogo for n in excluir_numeros):
                     continue
 
-                # Critério 5: exigir números obrigatórios
+                # Critério 5: exigir todos os números obrigatórios
                 if not all(n in jogo for n in exigir_numeros):
                     continue
 
                 resultados.append(jogo)
 
-                # Para testes: limitar a 3 jogos
-                if len(resultados) == 3:
+                # Limite para teste (remova ou altere depois)
+                if len(resultados) == 1:
                     return resultados
 
     return resultados
-
 
 
