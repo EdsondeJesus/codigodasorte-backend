@@ -29,7 +29,7 @@ def contar_pares(jogo):
 def gerar_combinacoes():
     resultados = []
 
-    for qtd_g1 in [8,9]:
+    for qtd_g1 in [8, 9]:
         qtd_g2 = 15 - qtd_g1
         for comb1 in combinations(grupo1, qtd_g1):
             for comb2 in combinations(grupo2, qtd_g2):
@@ -46,6 +46,9 @@ def gerar_combinacoes():
                 # Critério 3: exatamente X pares e Y ímpares
                 pares = contar_pares(jogo)
                 impares = contar_impares(jogo)
+
+                print(f"Jogo: {jogo} -> Pares: {pares}, Ímpares: {impares}")  # Debug
+
                 if pares != pares_desejados or impares != impares_desejados:
                     continue
 
@@ -59,10 +62,12 @@ def gerar_combinacoes():
 
                 resultados.append(jogo)
 
-                # Limite para teste (remova ou altere depois)
+                # Limite para teste
                 if len(resultados) == 1:
+                    print("Jogo final selecionado:", resultados[0])
                     return resultados
 
     return resultados
+
 
 
