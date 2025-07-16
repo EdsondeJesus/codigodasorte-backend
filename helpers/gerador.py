@@ -3,14 +3,14 @@ from itertools import combinations
 # ================================ #
 # CONFIGURAÇÃO DOS FILTROS FIXOS  #
 # ================================ #
-pares_desejados = 7
-impares_desejados = 8
+pares_desejados = 9
+impares_desejados = 6
 
-grupo1 = [1,3,5,6,7,9,10,13,15,16,18,19,21,23,25]
-grupo2 = [2,4,8,11,12,14,17,20,22,24]
+grupo1 = [1,4,5,6,8,10,11,12,13,15,16,19,20,24,25]
+grupo2 = [2,3,7,9,14,17,18,21,22,23]
 
 excluir_numeros = [16,17]
-exigir_numeros = [8]
+exigir_numeros = [2,7,22]
 
 def contar_impares(jogo):
     return sum(1 for d in jogo if d % 2 == 1)
@@ -21,7 +21,7 @@ def contar_pares(jogo):
 def gerar_combinacoes():
     resultados = []
 
-    for qtd_g1 in [8, 9]:
+    for qtd_g1 in [9]:
         qtd_g2 = 15 - qtd_g1
         for comb1 in combinations(grupo1, qtd_g1):
             for comb2 in combinations(grupo2, qtd_g2):
