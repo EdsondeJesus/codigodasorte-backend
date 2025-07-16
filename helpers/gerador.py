@@ -10,7 +10,7 @@ grupo1 = [1,4,5,6,8,10,11,12,13,15,16,19,20,24,25]
 grupo2 = [2,3,7,9,14,17,18,21,22,23]
 
 excluir_numeros = [16,17]
-exigir_numeros = [2,7,22]
+exigir_numeros = [2,7]
 
 def contar_impares(jogo):
     return sum(1 for d in jogo if d % 2 == 1)
