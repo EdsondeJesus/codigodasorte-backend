@@ -7,18 +7,16 @@ from itertools import combinations
 pares_desejados = 9
 impares_desejados = 6
 
-grupo1 = [1,2,6,7,8]
-grupo2 = [9,14,15,17,18]
-grupo3 = [20,21,22,24,25]
-grupo4 = [3,5,11,13,19,23]
-grupo5 = [4,10,12,16]
+grupo1 = [1,7,9,15,17,21,25]
+grupo2 = [2,6,8,14,18,20,22,24]
+grupo3 = [3,5,11,13,19,23]
+grupo4 = [4,10,12,16]
 
 # Quantidade fixa por grupo (deve sempre somar 15)
 quantidade_g1 = 3
-quantidade_g2 = 3
+quantidade_g2 = 6
 quantidade_g3 = 3
 quantidade_g4 = 3
-quantidade_g5 = 3
 
 excluir_numeros = [16]
 exigir_numeros = [19]
@@ -42,8 +40,6 @@ def gerar_combinacoes():
         for comb2 in combinations(grupo2, quantidade_g2):
             for comb3 in combinations(grupo3, quantidade_g3):
                 for comb4 in combinations(grupo4, quantidade_g4):
-                    for comb5 in combinations(grupo5, quantidade_g5):
-                        jogo = sorted(set(comb1 + comb2 + comb3 + comb4 + comb5))
                         if len(jogo) != 15:
                            continue
 
