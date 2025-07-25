@@ -13,6 +13,7 @@ grupo3 = [3,5,11,13,19,23]
 grupo4 = [4,10,12,16]
 
 # Quantidade fixa por grupo (deve sempre somar 15)
+
 quantidade_g1 = 3
 quantidade_g2 = 6
 quantidade_g3 = 3
@@ -33,15 +34,32 @@ def contar_pares(jogo):
 
 # === Geração com regras fixas ===
 
-def gerar_combinacoes():
-    resultados = []
+from itertools import combinations
+
+# Funções auxiliares para paridade
+
+def contar_pares(jogo):
+    return sum(1 for n in jogo if n % 2 == 0)
+
+def contar_impares(jogo):
+    return sum(1 for n in jogo if n % 2 != 0)
+
+# === Geração com regras fixas ===
+
+def gerar_combinacoes(grupo1, grupo2, grupo3, grupo4, quantidade_g1, quantidade_g2, quantidade_g3, quantidade_g4,
+                      pares_desejados, impares_desejados, excluir_numeros, exigir_numeros):
     
+    resultados = []
+
     for comb1 in combinations(grupo1, quantidade_g1):
         for comb2 in combinations(grupo2, quantidade_g2):
             for comb3 in combinations(grupo3, quantidade_g3):
                 for comb4 in combinations(grupo4, quantidade_g4):
-                        if len(jogo) != 15:
-                           continue
+                    jogo = list(comb1 + comb2 + comb3 + comb4)
+                    if len(jogo) != 15:
+                        continue
+
+                    jogo = sorted(jogo)
 
                     # Regra 1: o menor número deve ser 1, 2 ou 3
                     if jogo[0] not in [1, 2, 3]:
@@ -66,5 +84,5 @@ def gerar_combinacoes():
                         continue
 
                     resultados.append(jogo)
-    
+
     return resultados
