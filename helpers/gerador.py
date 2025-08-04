@@ -18,7 +18,7 @@ quantidade_g3 = 2
 quantidade_g4 = 4
 
 excluir_numeros = [11]
-exigir_numeros = [24,21,13,9]
+exigir_numeros = [24]
 
 # === Funções auxiliares ===
 
