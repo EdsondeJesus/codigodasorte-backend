@@ -7,10 +7,10 @@ from itertools import combinations
 pares_desejados = 7
 impares_desejados = 8
 
-grupo1 = [1,9,13,15,17,19,25]
-grupo2 = [2,10,14,16,18,20,22,24]
-grupo3 = [3,5,7,11,21]
-grupo4 = [4,6,8,12]
+grupo1 = [1,7,11,15,17,19,21]
+grupo2 = [2,4,6,8,14,16,18,22]
+grupo3 = [3,5,9,13,23,25]
+grupo4 = [10,12,20,24]
 
 quantidade_g1 = 5
 quantidade_g2 = 4
