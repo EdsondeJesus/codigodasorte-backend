@@ -13,7 +13,7 @@ grupo3 = [2,3,7,8,13]
 grupo4 = [16,19,20,23,25]
 
 quantidade_g1 = 4
-quantidade_g2 = 3
+quantidade_g2 = 5
 quantidade_g3 = 3
 quantidade_g4 = 3
 
