@@ -8,7 +8,7 @@ pares_desejados = 7
 impares_desejados = 8
 
 grupo1 = [3,5,7,15,17,19,23,25]
-grupo2 = [6,8,10,1216,20,24]
+grupo2 = [6,8,10,12,16,20,24]
 grupo3 = [1,9,11,13,21]
 grupo4 = [2,4,14,18,22]
 
