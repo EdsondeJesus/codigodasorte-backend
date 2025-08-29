@@ -54,14 +54,6 @@ def gerar_combinacoes():
                     if pares != pares_desejados or impares != impares_desejados:
                         continue
                     
-                    # Regra 4: exclusões
-                    if any(n in jogo for n in excluir_numeros):
-                        continue
-
-                    # Regra 5: exigências obrigatórias
-                    if not all(n in jogo for n in exigir_numeros):
-                        continue
-
                     resultados.append(jogo)
 
     return resultados
