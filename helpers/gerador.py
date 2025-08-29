@@ -17,9 +17,6 @@ quantidade_g2 = 4
 quantidade_g3 = 3
 quantidade_g4 = 3
 
-excluir_numeros = [22]
-exigir_numeros = [18]
-
 # === Funções auxiliares ===
 
 def contar_pares(jogo):
