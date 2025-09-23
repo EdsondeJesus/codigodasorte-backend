@@ -13,8 +13,8 @@ grupo3 = [1,7,9,17,25]
 grupo4 = [8,12,14,18,22]
 
 quantidade_g1 = 4
-quantidade_g2 = 6
-quantidade_g3 = 3
+quantidade_g2 = 5
+quantidade_g3 = 4
 quantidade_g4 = 2
 
 # === Funções auxiliares ===
