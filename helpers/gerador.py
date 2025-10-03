@@ -4,18 +4,20 @@ from itertools import combinations
 # CONFIGURAÇÃO DOS FILTROS FIXOS #
 # ============================== #
 
-pares_desejados = 8
-impares_desejados = 7
+pares_desejados = 7
+impares_desejados = 8
 
-grupo1 = [1,2,3,4,10,11,12,13,14,15]
-grupo2 = [5,6,7,8,9]
-grupo3 = [16,17,18,19,20]
-grupo4 = [21,22,23,24,25]
+grupo1 = [4,5,6,7,8]
+grupo2 = [9,14,15,16,17]
+grupo3 = [18,19,20,21,25]
+grupo4 = [1,3,11,13,23]
+grupo5 = [2,10,12,22,24]
 
-quantidade_g1 = 6
+quantidade_g1 = 3
 quantidade_g2 = 3
 quantidade_g3 = 3
 quantidade_g4 = 3
+quantidade_g5 = 3
 
 # === Funções auxiliares ===
 
@@ -34,7 +36,8 @@ def gerar_combinacoes():
         for comb2 in combinations(grupo2, quantidade_g2):
             for comb3 in combinations(grupo3, quantidade_g3):
                 for comb4 in combinations(grupo4, quantidade_g4):
-                    jogo = list(comb1 + comb2 + comb3 + comb4)
+                    for comb5 in combinations(grupo5, quantidade_g5):
+                    jogo = list(comb1 + comb2 + comb3 + comb4 + comb5)
                     if len(jogo) != 15:
                         continue
 
