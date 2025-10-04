@@ -4,13 +4,13 @@ from itertools import combinations
 # CONFIGURAÇÃO DOS FILTROS FIXOS #
 # ============================== #
 
-pares_desejados = 7
-impares_desejados = 8
+pares_desejados = 10
+impares_desejados = 5
 
-grupo1 = [19,21,4,9,10,15,18]
-grupo2 = [20,24,8,17,22,23,25]
-grupo3 = [1,12,14,16,5]
-grupo4 = [6,11,7,2,3,13]
+grupo1 = [16,21,9,18,14,19,1]
+grupo2 = [17,23,3,13,2,22,25]
+grupo3 = [15,10,12,4,5]
+grupo4 = [24,6,11,8,7,20]
 
 quantidade_g1 = 6
 quantidade_g2 = 3
