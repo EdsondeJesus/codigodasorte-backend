@@ -4,8 +4,8 @@ from itertools import combinations
 # CONFIGURAÇÃO DOS FILTROS FIXOS #
 # ============================== #
 
-pares_desejados = 7
-impares_desejados = 8
+pares_desejados = 8
+impares_desejados = 7
 
 grupo1 = [1,3,5,11,13,17,21]
 grupo2 = [4,6,8,14,16,20,22,24]
