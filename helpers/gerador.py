@@ -10,12 +10,12 @@ impares_desejados = 7
 grupo1 = [1,25]
 grupo2 = [2,3,4,5,8,9,10]
 grupo3 = [11,12,13,14,15,16,17]
-grupo4 = [18,19,20,24,25]
+grupo4 = [18,19,20,24]
 
 quantidade_g1 = 2
 quantidade_g2 = 4
-quantidade_g3 = 4
-quantidade_g4 = 5
+quantidade_g3 = 5
+quantidade_g4 = 4
 
 # === Funções auxiliares ===
 
