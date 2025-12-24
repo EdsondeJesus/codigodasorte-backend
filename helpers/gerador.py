@@ -10,7 +10,7 @@ impares_desejados = 7
 grupo1 = [1,2,3,4,5]
 grupo2 = [6,8,10,14,15]
 grupo3 = [17,18,19,20,24]
-grupo4 = [6,7,9,11,12,13,16,21,22,23]
+grupo4 = [7,9,11,12,13,16,21,22,23,25]
 
 quantidade_g1 = 3
 quantidade_g2 = 3
