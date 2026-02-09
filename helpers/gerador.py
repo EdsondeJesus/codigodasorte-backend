@@ -7,20 +7,17 @@ from itertools import combinations
 pares_desejados = 7
 impares_desejados = 8
 
-grupo1 = [	1,5,7,9,11,13	]
-grupo2 = [	3,4,10,12,20	]
-grupo3 = [	2,6,8,14,16,18,22,24	]
-grupo4 = [	15,17,19,21,23,25	]
+grupo1 = [	2,6,8,14,16,18,22	]
+grupo2 = [	4,10,24	]
+grupo3 = [	5,9,11,17,19,23,25	]
+grupo4 = [	1,7,13,15,21	]
 		
-quantidade_g1 = 	3	
-quantidade_g2 = 	0	
-quantidade_g3 = 	7	
-quantidade_g4 = 	5	
+quantidade_g1 = 	5	
+quantidade_g2 = 	2	
+quantidade_g3 = 	5	
+quantidade_g4 = 	3	
 	
 	
-	
-
-
 # === Funções auxiliares ===
 
 def contar_pares(jogo):
